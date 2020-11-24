@@ -128,6 +128,7 @@
             }            
         },
         updateProgram: async function(program) {
+            console.log(program.use_vpn);
             try {
                 let resp = await fetch(this.url+'/'+program.id, {
                     method: "PUT",
@@ -160,10 +161,6 @@
         },
         nextEpisode(program) {
             program.episode++;
-            this.updateProgram(program);
-        },
-        changeVPN(program) {
-            alert(program.use_vpn);
             this.updateProgram(program);
         },
         clearFields() {
