@@ -8,5 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class Program extends Model
 {
     use HasFactory;
-    protected $fillable = ['program', 'app', 'season', 'episode'];
+    protected $fillable = ['program', 'app', 'season', 'episode', 'use_vpn'];
 }

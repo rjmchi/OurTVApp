@@ -1,6 +1,14 @@
 <template>
 <div>
     <p>TV Programs</p>
+    <div class="programs">
+        <span>Program</span>
+        <span>App</span>
+        <span>Season</span>
+        <span>Episode</span>
+        <span>Use VPN</span>
+        <span>Delete</span>
+    </div>
     <div class="programs" v-for="program in programs" v-bind:key="program.id">
         <span>{{program.program}}</span>
         <span>{{program.app}}</span>
@@ -11,6 +19,10 @@
         <span>
             {{program.episode}}
             <button v-on:click="nextEpisode(program)" class="btn-sm btn-info"><font-awesome-icon icon="angle-right" /></button>
+        </span>
+        <span>
+            <input type="checkbox" v-model="program.use_vpn" true-value="1" false-value="0" v-on:change="updateProgram(program)">
+
         </span>
         <button v-on:click="deleteProgram(program)" class="btn-sm btn-danger"><font-awesome-icon icon="trash" /></button>
     </div>
@@ -30,7 +42,11 @@
         <div class="form-group">
             <label for="episode">Episode: </label>
             <input name="episode" type="text" class="form-control" v-model="newProgram.episode">
-        </div>        
+        </div> 
+        <div class="form-group">
+            <label for="usevpn">Use VPN: </label>
+            <input type="checkbox" v-model="newProgram.use_vpn" >
+        </div>   
         
         <button class="btn-sm btn-primary" type="submit">Add Program</button>
 
@@ -50,6 +66,7 @@
                     season:1,
                     episode:1,
                     app:'',
+                    use_vpn:0,
                 },
             }
         },
@@ -74,7 +91,8 @@
                         program: this.newProgram.program,
                         app: this.newProgram.app,
                         season: this.newProgram.season,
-                        episode: this.newProgram.episode
+                        episode: this.newProgram.episode,
+                        use_vpn:this.newProgram.use_vpn,
                         }),
                     headers: {
                         "Content-type": "application/json"
@@ -118,6 +136,7 @@
                         season: program.season,
                         episode: program.episode,
                         app: program.app,
+                        use_vpn:program.use_vpn,
                     }),
                     headers: {
                         "Content-type": "application/json"
@@ -141,6 +160,10 @@
         },
         nextEpisode(program) {
             program.episode++;
+            this.updateProgram(program);
+        },
+        changeVPN(program) {
+            alert(program.use_vpn);
             this.updateProgram(program);
         },
         clearFields() {

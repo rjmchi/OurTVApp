@@ -28,7 +28,7 @@ class ProgramController extends Controller
     public function store(Request $request)
     {
         $p = Program::create(["program"=>$request->program, "season"=>$request->season,
-        "episode"=>$request->episode, "app"=>$request->app]);
+        "episode"=>$request->episode, "app"=>$request->app, "use_vpn"=>$request->use_vpn]);
         return new ProgramResource($p);
     }
 
@@ -56,6 +56,7 @@ class ProgramController extends Controller
         $program->episode = $request->episode;
         $program->season = $request->season;
         $program->app = $request->app;
+        $program->use_vpn = $request->use_vpn;
         $program->save();
         return new ProgramResource($program);
     }
