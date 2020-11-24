@@ -49410,20 +49410,20 @@ var render = function() {
               ],
               attrs: {
                 type: "checkbox",
-                "true-value": "1",
-                "false-value": "0"
+                "true-value": "true",
+                "false-value": "false"
               },
               domProps: {
                 checked: Array.isArray(program.use_vpn)
                   ? _vm._i(program.use_vpn, null) > -1
-                  : _vm._q(program.use_vpn, "1")
+                  : _vm._q(program.use_vpn, "true")
               },
               on: {
                 change: [
                   function($event) {
                     var $$a = program.use_vpn,
                       $$el = $event.target,
-                      $$c = $$el.checked ? "1" : "0"
+                      $$c = $$el.checked ? "true" : "false"
                     if (Array.isArray($$a)) {
                       var $$v = null,
                         $$i = _vm._i($$a, $$v)

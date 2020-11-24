@@ -21,7 +21,7 @@
             <button v-on:click="nextEpisode(program)" class="btn-sm btn-info"><font-awesome-icon icon="angle-right" /></button>
         </span>
         <span>
-            <input type="checkbox" v-model="program.use_vpn" true-value="1" false-value="0" v-on:change="updateProgram(program)">
+            <input type="checkbox" v-model="program.use_vpn" true-value=true false-value=false v-on:change="updateProgram(program)">
 
         </span>
         <button v-on:click="deleteProgram(program)" class="btn-sm btn-danger"><font-awesome-icon icon="trash" /></button>
