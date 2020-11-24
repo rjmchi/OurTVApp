@@ -1,0 +1,30 @@
+get http://localhost:8000/api/program
+
+###
+get http://localhost:8000/api/program/1
+
+
+###
+post http://localhost:8000/api/program
+content-type: application/json
+
+{
+    "program": "Jane the Vigin",
+    "season": 3,
+    "episode":4,
+    "app":"Netflix"
+}
+
+###
+put http://localhost:8000/api/program/3
+content-type: application/json
+
+{
+    "program": "Jane the Vigin",
+    "season": 4,
+    "episode":4,
+    "app":"Netflix"
+}
+
+###
+delete http://localhost:8000/api/program/4
