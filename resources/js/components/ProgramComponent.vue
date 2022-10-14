@@ -29,12 +29,12 @@
     <form @submit.prevent="addProgram">
         <div class="form-group">
             <label for="program">Program: </label>
-            <input name="program" type="text" class="form-control" v-model="newProgram.program"> 
+            <input name="program" type="text" class="form-control" v-model="newProgram.program">
         </div>
         <div class="form-group">
             <label for="app">APP: </label>
             <input name="app" type="text" class="form-control" v-model="newProgram.app">
-        </div>        
+        </div>
         <div class="form-group">
             <label for="season">Season: </label>
             <input name="season" type="text" class="form-control" v-model="newProgram.season">
@@ -42,12 +42,12 @@
         <div class="form-group">
             <label for="episode">Episode: </label>
             <input name="episode" type="text" class="form-control" v-model="newProgram.episode">
-        </div> 
+        </div>
         <div class="form-group">
             <label for="usevpn">Use VPN: </label>
             <input type="checkbox" v-model="newProgram.use_vpn" >
-        </div>   
-        
+        </div>
+
         <button class="btn-sm btn-primary" type="submit">Add Program</button>
 
     </form>
@@ -106,7 +106,7 @@
                     }
                 } catch (err) {
                     console.log(err);
-            }     
+            }
         },
         deleteProgram: async function(program) {
             try {
@@ -125,7 +125,7 @@
                 }
             } catch (err) {
                 console.log(err);
-            }            
+            }
         },
         updateProgram: async function(program) {
             console.log(program.use_vpn);
@@ -152,7 +152,7 @@
                 }
             } catch (err) {
                 console.log(err);
-            }           
+            }
         },
         nextSeason(program) {
             program.season++;
@@ -179,7 +179,7 @@
 <style lang="scss" scoped>
 .programs {
     display:flex;
-    background-color:rgb(231, 213, 236);
+    background-color:rgb(218, 219, 231);
     margin:10px;
     padding:10px;
     span {
