@@ -24,7 +24,9 @@
             <input type="checkbox" v-model="program.use_vpn" true-value=true false-value=false v-on:change="updateProgram(program)">
 
         </span>
-        <button v-on:click="deleteProgram(program)" class="btn-sm btn-danger"><font-awesome-icon icon="trash" /></button>
+        <span>
+            <button v-on:click="deleteProgram(program)" class="btn-sm btn-danger"><font-awesome-icon icon="trash" /></button>
+        </span>
     </div>
     <form @submit.prevent="addProgram">
         <div class="form-group">
@@ -168,6 +170,7 @@
             this.newProgram.app = '';
             this.newProgram.season = 1;
             this.newProgram.episode = 1;
+            this.newProgram.use_vpn = false;
         },
     },
     created() {
@@ -179,11 +182,12 @@
 <style lang="scss" scoped>
 .programs {
     display:flex;
+    justify-content: space-around;
     background-color:rgb(218, 219, 231);
     margin:10px;
     padding:10px;
     span {
-        flex: 1 1 25%;
+        flex-basis:15%;
     }
 }
 
