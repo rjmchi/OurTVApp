@@ -5,7 +5,9 @@ import laravel from 'laravel-vite-plugin';
 import { defineConfig } from 'vite';
 
 export default defineConfig({
-    base: 'https://ourtvapp.herokuapp.com',
+    server: {
+        https: true
+    },
     plugins: [
         laravel({
             input: ['resources/js/app.ts'],
