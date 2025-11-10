@@ -1,2 +1,2 @@
-Our TV App - v2.0
+Our TV App
 Keeps track of tv programs
