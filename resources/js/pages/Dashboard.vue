@@ -62,21 +62,24 @@ const vpnChange = (program: Program) => {
                     </TableRow>
                 </TableHeader>
                 <TableBody>
-                    <TableRow v-for="program in programs" :key="program.id" class="bg-teal-50">
+                    <TableRow v-for="program in programs" :key="program.id" class="bg-teal-50 dark:bg-zinc-900">
                         <TableCell>{{ program.program }}</TableCell>
                         <TableCell>{{ program.app }}</TableCell>
                         <TableCell>{{ program.season }}
                             <Link :href="nextSeason(program)">
-                            <Button size="sm" class="ml-1 bg-teal-400 text-teal-950 hover:text-white">
-                                <ChevronRight />
-                            </Button>
+                                <Button size="sm"
+                                    class="ml-1 bg-teal-500 text-teal-950 hover:text-white hover:bg-teal-900">
+                                    <ChevronRight />
+                                </Button>
                             </Link>
                         </TableCell>
                         <TableCell>{{ program.episode }}
                             <Link :href="nextEpisode(program)">
-                            <Button size="sm" class="ml-1 bg-teal-400 text-teal-950 hover:text-white">
-                                <ChevronRight />
-                            </Button></Link>
+                                <Button size="sm"
+                                    class="ml-1 bg-teal-500 text-teal-950 hover:text-white hover:bg-teal-900">
+                                    <ChevronRight />
+                                </Button>
+                            </Link>
                         </TableCell>
                         <TableCell>
                             <Checkbox v-model="program.use_vpn" v-on:click="vpnChange(program)" />
@@ -84,7 +87,7 @@ const vpnChange = (program: Program) => {
                         <TableCell>
 
                             <Link :href="destroy(program)" method="delete">
-                            <Trash2 class="text-red-500 cursor-pointer" />
+                                <Trash2 class="text-red-500 cursor-pointer" />
                             </Link>
                         </TableCell>
 
